@@ -2,25 +2,60 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.huaxiaerp.huaxia_erp.datasource.mappers.SupplierMapper">
 
-    <select id="getSupplierLikeSupplierOrTelephoneOrPhoneNumber"
-            resultType="cn.huaxiaerp.huaxia_erp.datasource.po.Supplier">
-        SELECT
-            `id`,
-            `supplier`,
-            `contacts`,
-            `telephone`,
-            `phone_num`,
-            `email`,
-            `begin_need_pay`,
-            `all_need_pay`,
-            `all_need_pay`,
-            `tax_rate`,
-            `enabled`
-        FROM `jsh_erp`.`jsh_supplier`
-        WHERE `type` ='供应商'
-          AND supplier LIKE CONCAT('%', #{supplierName}, '%')
-          AND telephone LIKE CONCAT('%', #{telephone}, '%')
-          AND phone_num LIKE CONCAT('%', #{phoneNumber}, '%')
-            LIMIT #{startIndex}, #{pageSize}
-    </select>
+  <resultMap id="BaseResultMap" type="cn.huaxiaerp.huaxia_erp.datasource.po.Supplier">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="supplier" jdbcType="VARCHAR" property="supplier" />
+    <result column="contacts" jdbcType="VARCHAR" property="contacts" />
+    <result column="phone_num" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="isystem" jdbcType="TINYINT" property="isystem" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="enabled" jdbcType="BIT" property="enabled" />
+    <result column="advance_in" jdbcType="DECIMAL" property="advanceIn" />
+    <result column="begin_need_get" jdbcType="DECIMAL" property="beginNeedGet" />
+    <result column="begin_need_pay" jdbcType="DECIMAL" property="beginNeedPay" />
+    <result column="all_need_get" jdbcType="DECIMAL" property="allNeedGet" />
+    <result column="all_need_pay" jdbcType="DECIMAL" property="allNeedPay" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="tax_num" jdbcType="VARCHAR" property="taxNum" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="account_number" jdbcType="VARCHAR" property="accountNumber" />
+    <result column="tax_rate" jdbcType="DECIMAL" property="taxRate" />
+    <result column="sort" jdbcType="VARCHAR" property="sort" />
+    <result column="tenant_id" jdbcType="BIGINT" property="tenantId" />
+    <result column="delete_flag" jdbcType="VARCHAR" property="deleteFlag" />
+  </resultMap>
+
+  <select id="getSupplierLikeSupplierOrTelephoneOrPhoneNumber" parameterType="string" resultMap="BaseResultMap">
+    SELECT
+    `id`,
+    `supplier`,
+    `contacts`,
+    `telephone`,
+    `phone_num`,
+    `email`,
+    `begin_need_pay`,
+    `all_need_pay`,
+    `all_need_pay`,
+    `tax_rate`,
+    `enabled`
+    FROM `jsh_erp`.`jsh_supplier`
+    <where>
+      <if test="supplier != null and supplier != ''">
+        AND supplier LIKE '%' || #{supplier} ||'%'
+      </if>
+      <if test="telephone != null and telephone != ''">
+        AND telephone LIKE '%' || #{telephone} || '%'
+      </if>
+      <if test="phoneNum != null and phoneNum != ''">
+        AND phone_num LIKE '%'|| #{phoneNum} ||'%'
+      </if>
+    </where>
+  </select>
+  <select id="getAll" resultType="cn.huaxiaerp.huaxia_erp.datasource.po.Supplier">
+    select * FROM `jsh_erp`.`jsh_supplier`
+  </select>
 </mapper>
