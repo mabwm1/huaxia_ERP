@@ -2,4 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.huaxiaerp.huaxia_erp.datasource.mappers.SupplierMapper">
 
+    <select id="getSupplierLikeSupplierOrTelephoneOrPhoneNumber"
+            resultType="cn.huaxiaerp.huaxia_erp.datasource.po.Supplier">
+        SELECT
+            `id`,
+            `supplier`,
+            `contacts`,
+            `telephone`,
+            `phone_num`,
+            `email`,
+            `begin_need_pay`,
+            `all_need_pay`,
+            `all_need_pay`,
+                `tax_rate`,
+            `enabled`
+        FROM `jsh_erp`.`jsh_supplier`
+        WHERE `type` ='供应商'
+          AND supplier LIKE CONCAT('%', #{supplierName}, '%')
+          AND telephone LIKE CONCAT('%', #{telephone}, '%')
+          AND phone_num LIKE CONCAT('%', #{phoneNumber}, '%')
+            LIMIT #{startIndex}, #{pageSize}
+    </select>
 </mapper>
