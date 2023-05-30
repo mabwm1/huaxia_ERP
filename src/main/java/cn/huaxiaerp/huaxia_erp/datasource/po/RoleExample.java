@@ -328,27 +328,22 @@ public class RoleExample {
             addCriterion("price_limit >", value, "priceLimit");
             return (Criteria) this;
         }
-
         public Criteria andPriceLimitGreaterThanOrEqualTo(String value) {
             addCriterion("price_limit >=", value, "priceLimit");
             return (Criteria) this;
         }
-
         public Criteria andPriceLimitLessThan(String value) {
             addCriterion("price_limit <", value, "priceLimit");
             return (Criteria) this;
         }
-
         public Criteria andPriceLimitLessThanOrEqualTo(String value) {
             addCriterion("price_limit <=", value, "priceLimit");
             return (Criteria) this;
         }
-
         public Criteria andPriceLimitLike(String value) {
             addCriterion("price_limit like", value, "priceLimit");
             return (Criteria) this;
         }
-
         public Criteria andPriceLimitNotLike(String value) {
             addCriterion("price_limit not like", value, "priceLimit");
             return (Criteria) this;
