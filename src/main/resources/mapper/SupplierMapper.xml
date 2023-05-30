@@ -14,7 +14,7 @@
             `begin_need_pay`,
             `all_need_pay`,
             `all_need_pay`,
-                `tax_rate`,
+            `tax_rate`,
             `enabled`
         FROM `jsh_erp`.`jsh_supplier`
         WHERE `type` ='供应商'
