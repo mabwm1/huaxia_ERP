@@ -1,4 +1,4 @@
-package cn.huaxiaerp.huaxia_erp.datasource.mapper;
+package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.Role;
 import cn.huaxiaerp.huaxia_erp.datasource.po.RoleEx;
