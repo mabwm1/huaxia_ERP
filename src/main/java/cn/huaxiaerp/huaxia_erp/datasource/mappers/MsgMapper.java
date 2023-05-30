@@ -1,15 +1,13 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.Msg;
-import com.jsh.erp.datasource.entities.MsgExample;
+
+import cn.huaxiaerp.huaxia_erp.datasource.po.Msg;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface MsgMapper {
-    long countByExample(MsgExample example);
 
-    int deleteByExample(MsgExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +15,10 @@ public interface MsgMapper {
 
     int insertSelective(Msg record);
 
-    List<Msg> selectByExample(MsgExample example);
 
     Msg selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") Msg record, @Param("example") MsgExample example);
 
-    int updateByExample(@Param("record") Msg record, @Param("example") MsgExample example);
 
     int updateByPrimaryKeySelective(Msg record);
 

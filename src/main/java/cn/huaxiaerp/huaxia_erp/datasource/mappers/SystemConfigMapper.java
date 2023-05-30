@@ -1,15 +1,12 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.SystemConfig;
-import com.jsh.erp.datasource.entities.SystemConfigExample;
+import cn.huaxiaerp.huaxia_erp.datasource.po.SystemConfig;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface SystemConfigMapper {
-    long countByExample(SystemConfigExample example);
 
-    int deleteByExample(SystemConfigExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +14,8 @@ public interface SystemConfigMapper {
 
     int insertSelective(SystemConfig record);
 
-    List<SystemConfig> selectByExample(SystemConfigExample example);
 
     SystemConfig selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") SystemConfig record, @Param("example") SystemConfigExample example);
-
-    int updateByExample(@Param("record") SystemConfig record, @Param("example") SystemConfigExample example);
 
     int updateByPrimaryKeySelective(SystemConfig record);
 

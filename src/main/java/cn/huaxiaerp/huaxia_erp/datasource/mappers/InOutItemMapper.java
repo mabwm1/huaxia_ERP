@@ -1,15 +1,11 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.InOutItem;
-import com.jsh.erp.datasource.entities.InOutItemExample;
+import cn.huaxiaerp.huaxia_erp.datasource.po.InOutItem;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface InOutItemMapper {
-    long countByExample(InOutItemExample example);
-
-    int deleteByExample(InOutItemExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +13,9 @@ public interface InOutItemMapper {
 
     int insertSelective(InOutItem record);
 
-    List<InOutItem> selectByExample(InOutItemExample example);
 
     InOutItem selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") InOutItem record, @Param("example") InOutItemExample example);
-
-    int updateByExample(@Param("record") InOutItem record, @Param("example") InOutItemExample example);
 
     int updateByPrimaryKeySelective(InOutItem record);
 

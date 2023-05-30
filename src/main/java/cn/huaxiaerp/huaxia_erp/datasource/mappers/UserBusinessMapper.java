@@ -1,15 +1,12 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.UserBusiness;
-import com.jsh.erp.datasource.entities.UserBusinessExample;
+import cn.huaxiaerp.huaxia_erp.datasource.po.UserBusiness;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface UserBusinessMapper {
-    long countByExample(UserBusinessExample example);
 
-    int deleteByExample(UserBusinessExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +14,9 @@ public interface UserBusinessMapper {
 
     int insertSelective(UserBusiness record);
 
-    List<UserBusiness> selectByExample(UserBusinessExample example);
 
     UserBusiness selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") UserBusiness record, @Param("example") UserBusinessExample example);
-
-    int updateByExample(@Param("record") UserBusiness record, @Param("example") UserBusinessExample example);
 
     int updateByPrimaryKeySelective(UserBusiness record);
 

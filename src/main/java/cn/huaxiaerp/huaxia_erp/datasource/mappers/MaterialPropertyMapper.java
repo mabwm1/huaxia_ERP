@@ -1,15 +1,13 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.MaterialProperty;
-import com.jsh.erp.datasource.entities.MaterialPropertyExample;
+
+import cn.huaxiaerp.huaxia_erp.datasource.po.MaterialProperty;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface MaterialPropertyMapper {
-    long countByExample(MaterialPropertyExample example);
 
-    int deleteByExample(MaterialPropertyExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +15,9 @@ public interface MaterialPropertyMapper {
 
     int insertSelective(MaterialProperty record);
 
-    List<MaterialProperty> selectByExample(MaterialPropertyExample example);
 
     MaterialProperty selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") MaterialProperty record, @Param("example") MaterialPropertyExample example);
-
-    int updateByExample(@Param("record") MaterialProperty record, @Param("example") MaterialPropertyExample example);
 
     int updateByPrimaryKeySelective(MaterialProperty record);
 

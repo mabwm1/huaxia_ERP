@@ -1,15 +1,13 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.Tenant;
-import com.jsh.erp.datasource.entities.TenantExample;
+
+import cn.huaxiaerp.huaxia_erp.datasource.po.Tenant;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface TenantMapper {
-    long countByExample(TenantExample example);
 
-    int deleteByExample(TenantExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +15,9 @@ public interface TenantMapper {
 
     int insertSelective(Tenant record);
 
-    List<Tenant> selectByExample(TenantExample example);
 
     Tenant selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") Tenant record, @Param("example") TenantExample example);
-
-    int updateByExample(@Param("record") Tenant record, @Param("example") TenantExample example);
 
     int updateByPrimaryKeySelective(Tenant record);
 

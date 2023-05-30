@@ -1,15 +1,11 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.Log;
-import com.jsh.erp.datasource.entities.LogExample;
+import cn.huaxiaerp.huaxia_erp.datasource.po.Log;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface LogMapper {
-    long countByExample(LogExample example);
-
-    int deleteByExample(LogExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +13,9 @@ public interface LogMapper {
 
     int insertSelective(Log record);
 
-    List<Log> selectByExample(LogExample example);
 
     Log selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") Log record, @Param("example") LogExample example);
-
-    int updateByExample(@Param("record") Log record, @Param("example") LogExample example);
 
     int updateByPrimaryKeySelective(Log record);
 

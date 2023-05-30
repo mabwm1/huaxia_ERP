@@ -1,15 +1,11 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.Unit;
-import com.jsh.erp.datasource.entities.UnitExample;
+import cn.huaxiaerp.huaxia_erp.datasource.po.Unit;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface UnitMapper {
-    long countByExample(UnitExample example);
-
-    int deleteByExample(UnitExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +13,11 @@ public interface UnitMapper {
 
     int insertSelective(Unit record);
 
-    List<Unit> selectByExample(UnitExample example);
+
 
     Unit selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") Unit record, @Param("example") UnitExample example);
 
-    int updateByExample(@Param("record") Unit record, @Param("example") UnitExample example);
 
     int updateByPrimaryKeySelective(Unit record);
 

@@ -1,15 +1,12 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.Organization;
-import com.jsh.erp.datasource.entities.OrganizationExample;
+
+import cn.huaxiaerp.huaxia_erp.datasource.po.Organization;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface OrganizationMapper {
-    long countByExample(OrganizationExample example);
-
-    int deleteByExample(OrganizationExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +14,10 @@ public interface OrganizationMapper {
 
     int insertSelective(Organization record);
 
-    List<Organization> selectByExample(OrganizationExample example);
+
 
     Organization selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") Organization record, @Param("example") OrganizationExample example);
-
-    int updateByExample(@Param("record") Organization record, @Param("example") OrganizationExample example);
 
     int updateByPrimaryKeySelective(Organization record);
 

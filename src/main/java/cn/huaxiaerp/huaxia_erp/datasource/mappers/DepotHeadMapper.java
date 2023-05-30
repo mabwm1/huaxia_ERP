@@ -1,15 +1,11 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.DepotHead;
-import com.jsh.erp.datasource.entities.DepotHeadExample;
+import cn.huaxiaerp.huaxia_erp.datasource.po.DepotHead;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface DepotHeadMapper {
-    long countByExample(DepotHeadExample example);
-
-    int deleteByExample(DepotHeadExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +13,9 @@ public interface DepotHeadMapper {
 
     int insertSelective(DepotHead record);
 
-    List<DepotHead> selectByExample(DepotHeadExample example);
 
     DepotHead selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") DepotHead record, @Param("example") DepotHeadExample example);
-
-    int updateByExample(@Param("record") DepotHead record, @Param("example") DepotHeadExample example);
 
     int updateByPrimaryKeySelective(DepotHead record);
 

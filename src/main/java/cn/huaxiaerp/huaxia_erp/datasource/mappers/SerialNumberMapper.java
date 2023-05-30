@@ -1,15 +1,12 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.SerialNumber;
-import com.jsh.erp.datasource.entities.SerialNumberExample;
+import cn.huaxiaerp.huaxia_erp.datasource.po.SerialNumber;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface SerialNumberMapper {
-    long countByExample(SerialNumberExample example);
 
-    int deleteByExample(SerialNumberExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +14,8 @@ public interface SerialNumberMapper {
 
     int insertSelective(SerialNumber record);
 
-    List<SerialNumber> selectByExample(SerialNumberExample example);
 
     SerialNumber selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") SerialNumber record, @Param("example") SerialNumberExample example);
-
-    int updateByExample(@Param("record") SerialNumber record, @Param("example") SerialNumberExample example);
 
     int updateByPrimaryKeySelective(SerialNumber record);
 

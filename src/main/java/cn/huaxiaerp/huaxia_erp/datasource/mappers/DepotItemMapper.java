@@ -1,15 +1,11 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-import com.jsh.erp.datasource.entities.DepotItem;
-import com.jsh.erp.datasource.entities.DepotItemExample;
+import cn.huaxiaerp.huaxia_erp.datasource.po.DepotItem;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface DepotItemMapper {
-    long countByExample(DepotItemExample example);
-
-    int deleteByExample(DepotItemExample example);
 
     int deleteByPrimaryKey(Long id);
 
@@ -17,13 +13,7 @@ public interface DepotItemMapper {
 
     int insertSelective(DepotItem record);
 
-    List<DepotItem> selectByExample(DepotItemExample example);
-
     DepotItem selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") DepotItem record, @Param("example") DepotItemExample example);
-
-    int updateByExample(@Param("record") DepotItem record, @Param("example") DepotItemExample example);
 
     int updateByPrimaryKeySelective(DepotItem record);
 
