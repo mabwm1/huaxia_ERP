@@ -16,9 +16,10 @@ public interface SupplierMapper extends BaseMapper<Supplier> {
      * @param supplier 供应商名称
      * @param telephone 手机号码
      * @param phoneNum 联系电话
+     * @param type 供应商/客户
      * @return
      */
-    List<Supplier> getSupplierLikeSupplierOrTelephoneOrPhoneNumber(String supplier,String telephone,String phoneNum);
+    List<Supplier> getSupplierLikeSupplierOrTelephoneOrPhoneNumber(String type,String supplier,String telephone,String phoneNum);
     List<Supplier> getAll();
 
 }
