@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HuaxiaErpApplication {
 
     public static void main(String[] args) {
+        System.out.println("springboot启动成功");
         SpringApplication.run(HuaxiaErpApplication.class, args);
     }
 
