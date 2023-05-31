@@ -1,23 +1,17 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
+
 import cn.huaxiaerp.huaxia_erp.datasource.po.SystemConfig;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 系统参数 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface SystemConfigMapper extends BaseMapper<SystemConfig> {
 
-public interface SystemConfigMapper {
-
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(SystemConfig record);
-
-    int insertSelective(SystemConfig record);
-
-
-    SystemConfig selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(SystemConfig record);
-
-    int updateByPrimaryKey(SystemConfig record);
 }

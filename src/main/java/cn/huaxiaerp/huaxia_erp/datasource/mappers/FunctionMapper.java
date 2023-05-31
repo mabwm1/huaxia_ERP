@@ -1,22 +1,16 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.Function;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 功能模块表 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface FunctionMapper extends BaseMapper<Function> {
 
-public interface FunctionMapper {
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(Function record);
-
-    int insertSelective(Function record);
-
-
-    Function selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(Function record);
-
-    int updateByPrimaryKey(Function record);
 }

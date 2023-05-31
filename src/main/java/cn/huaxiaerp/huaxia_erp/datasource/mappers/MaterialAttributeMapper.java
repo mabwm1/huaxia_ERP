@@ -1,22 +1,17 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
+
 import cn.huaxiaerp.huaxia_erp.datasource.po.MaterialAttribute;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 产品属性表 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface MaterialAttributeMapper extends BaseMapper<MaterialAttribute> {
 
-public interface MaterialAttributeMapper {
-
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(MaterialAttribute record);
-
-    int insertSelective(MaterialAttribute record);
-
-    MaterialAttribute selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(MaterialAttribute record);
-
-    int updateByPrimaryKey(MaterialAttribute record);
 }

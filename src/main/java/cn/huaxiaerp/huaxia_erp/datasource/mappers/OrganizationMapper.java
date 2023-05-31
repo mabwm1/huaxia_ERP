@@ -2,24 +2,16 @@ package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.Organization;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 机构表 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface OrganizationMapper extends BaseMapper<Organization> {
 
-public interface OrganizationMapper {
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(Organization record);
-
-    int insertSelective(Organization record);
-
-
-
-    Organization selectByPrimaryKey(Long id);
-
-
-    int updateByPrimaryKeySelective(Organization record);
-
-    int updateByPrimaryKey(Organization record);
 }

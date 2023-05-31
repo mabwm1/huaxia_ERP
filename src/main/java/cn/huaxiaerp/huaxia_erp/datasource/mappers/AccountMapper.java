@@ -1,21 +1,17 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
+
 import cn.huaxiaerp.huaxia_erp.datasource.po.Account;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 账户信息 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface AccountMapper extends BaseMapper<Account> {
 
-public interface AccountMapper {
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(Account record);
-
-    int insertSelective(Account record);
-
-    Account selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(Account record);
-
-    int updateByPrimaryKey(Account record);
 }

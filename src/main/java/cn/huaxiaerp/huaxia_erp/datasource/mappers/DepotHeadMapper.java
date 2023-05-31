@@ -1,23 +1,16 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.DepotHead;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 单据主表 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface DepotHeadMapper extends BaseMapper<DepotHead> {
 
-public interface DepotHeadMapper {
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(DepotHead record);
-
-    int insertSelective(DepotHead record);
-
-
-    DepotHead selectByPrimaryKey(Long id);
-
-
-    int updateByPrimaryKeySelective(DepotHead record);
-
-    int updateByPrimaryKey(DepotHead record);
 }

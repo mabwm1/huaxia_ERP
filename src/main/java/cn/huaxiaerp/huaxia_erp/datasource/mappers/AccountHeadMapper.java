@@ -1,18 +1,16 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.AccountHead;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+/**
+ * <p>
+ * 财务主表 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface AccountHeadMapper extends BaseMapper<AccountHead> {
 
-public interface AccountHeadMapper {
-    int deleteByPrimaryKey(Long id);
-
-    int insert(AccountHead record);
-
-    int insertSelective(AccountHead record);
-
-    AccountHead selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(AccountHead record);
-
-    int updateByPrimaryKey(AccountHead record);
 }

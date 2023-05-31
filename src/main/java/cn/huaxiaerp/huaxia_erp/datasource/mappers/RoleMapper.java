@@ -1,24 +1,17 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
+
 import cn.huaxiaerp.huaxia_erp.datasource.po.Role;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 角色表 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface RoleMapper extends BaseMapper<Role> {
 
-public interface RoleMapper {
-
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(Role record);
-
-    int insertSelective(Role record);
-
-
-    Role selectByPrimaryKey(Long id);
-
-
-    int updateByPrimaryKeySelective(Role record);
-
-    int updateByPrimaryKey(Role record);
 }

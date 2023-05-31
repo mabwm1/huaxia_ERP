@@ -2,24 +2,16 @@ package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.Tenant;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 租户 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface TenantMapper extends BaseMapper<Tenant> {
 
-public interface TenantMapper {
-
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(Tenant record);
-
-    int insertSelective(Tenant record);
-
-
-    Tenant selectByPrimaryKey(Long id);
-
-
-    int updateByPrimaryKeySelective(Tenant record);
-
-    int updateByPrimaryKey(Tenant record);
 }

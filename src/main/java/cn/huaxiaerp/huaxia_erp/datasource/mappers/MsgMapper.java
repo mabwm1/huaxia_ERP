@@ -1,26 +1,16 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-
 import cn.huaxiaerp.huaxia_erp.datasource.po.Msg;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ * 消息表 Mapper 接口
+ * </p>
+ *
+ * @author Tv
+ * @since 2023-05-31
+ */
+public interface MsgMapper extends BaseMapper<Msg> {
 
-public interface MsgMapper {
-
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(Msg record);
-
-    int insertSelective(Msg record);
-
-
-    Msg selectByPrimaryKey(Long id);
-
-
-
-    int updateByPrimaryKeySelective(Msg record);
-
-    int updateByPrimaryKey(Msg record);
 }
