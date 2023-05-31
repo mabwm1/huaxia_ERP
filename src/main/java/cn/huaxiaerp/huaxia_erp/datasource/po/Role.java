@@ -1,9 +1,13 @@
 package cn.huaxiaerp.huaxia_erp.datasource.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
+@TableName("jsh_role")
 public class Role {
+    @TableId("id")
     private Long id;
 
     private String name;
