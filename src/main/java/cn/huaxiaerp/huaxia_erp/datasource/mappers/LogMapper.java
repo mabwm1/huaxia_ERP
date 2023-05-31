@@ -1,16 +1,23 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.Log;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 操作日志 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface LogMapper extends BaseMapper<Log> {
+import java.util.List;
 
+public interface LogMapper {
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(Log record);
+
+    int insertSelective(Log record);
+
+
+    Log selectByPrimaryKey(Long id);
+
+
+    int updateByPrimaryKeySelective(Log record);
+
+    int updateByPrimaryKey(Log record);
 }

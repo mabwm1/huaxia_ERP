@@ -1,16 +1,25 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
+
 import cn.huaxiaerp.huaxia_erp.datasource.po.MaterialExtend;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 产品价格扩展 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface MaterialExtendMapper extends BaseMapper<MaterialExtend> {
+import java.util.List;
 
+public interface MaterialExtendMapper {
+
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(MaterialExtend record);
+
+    int insertSelective(MaterialExtend record);
+
+
+    MaterialExtend selectByPrimaryKey(Long id);
+
+
+    int updateByPrimaryKeySelective(MaterialExtend record);
+
+    int updateByPrimaryKey(MaterialExtend record);
 }

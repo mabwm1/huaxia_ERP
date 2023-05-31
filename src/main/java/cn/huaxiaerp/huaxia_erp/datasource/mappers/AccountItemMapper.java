@@ -1,16 +1,22 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.AccountItem;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 财务子表 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface AccountItemMapper extends BaseMapper<AccountItem> {
+import java.util.List;
 
+public interface AccountItemMapper {
+
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(AccountItem record);
+
+    int insertSelective(AccountItem record);
+
+    AccountItem selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(AccountItem record);
+
+    int updateByPrimaryKey(AccountItem record);
 }

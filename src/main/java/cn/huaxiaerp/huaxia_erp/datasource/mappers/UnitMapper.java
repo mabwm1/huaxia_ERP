@@ -1,17 +1,25 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-
 import cn.huaxiaerp.huaxia_erp.datasource.po.Unit;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 多单位表 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface UnitMapper extends BaseMapper<Unit> {
+import java.util.List;
 
+public interface UnitMapper {
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(Unit record);
+
+    int insertSelective(Unit record);
+
+
+
+    Unit selectByPrimaryKey(Long id);
+
+
+
+    int updateByPrimaryKeySelective(Unit record);
+
+    int updateByPrimaryKey(Unit record);
 }

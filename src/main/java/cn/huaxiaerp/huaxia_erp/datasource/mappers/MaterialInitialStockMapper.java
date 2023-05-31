@@ -1,16 +1,23 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.MaterialInitialStock;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 产品初始库存 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface MaterialInitialStockMapper extends BaseMapper<MaterialInitialStock> {
+import java.util.List;
 
+public interface MaterialInitialStockMapper {
+
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(MaterialInitialStock record);
+
+    int insertSelective(MaterialInitialStock record);
+
+
+    MaterialInitialStock selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(MaterialInitialStock record);
+
+    int updateByPrimaryKey(MaterialInitialStock record);
 }

@@ -1,16 +1,24 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.User;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 用户表 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface UserMapper extends BaseMapper<User> {
+import java.util.List;
 
+public interface UserMapper {
+
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+
+    User selectByPrimaryKey(Long id);
+
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }

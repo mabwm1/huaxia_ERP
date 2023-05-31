@@ -1,17 +1,24 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-
 import cn.huaxiaerp.huaxia_erp.datasource.po.Supplier;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 供应商/客户信息表 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface SupplierMapper extends BaseMapper<Supplier> {
+import java.util.List;
 
+public interface SupplierMapper {
+
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(Supplier record);
+
+    int insertSelective(Supplier record);
+
+
+
+    Supplier selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(Supplier record);
+
+    int updateByPrimaryKey(Supplier record);
 }

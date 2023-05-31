@@ -1,17 +1,24 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
-
 import cn.huaxiaerp.huaxia_erp.datasource.po.PlatformConfig;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 平台参数 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface PlatformConfigMapper extends BaseMapper<PlatformConfig> {
+import java.util.List;
 
+public interface PlatformConfigMapper {
+
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(PlatformConfig record);
+
+    int insertSelective(PlatformConfig record);
+
+
+    PlatformConfig selectByPrimaryKey(Long id);
+
+
+    int updateByPrimaryKeySelective(PlatformConfig record);
+
+    int updateByPrimaryKey(PlatformConfig record);
 }

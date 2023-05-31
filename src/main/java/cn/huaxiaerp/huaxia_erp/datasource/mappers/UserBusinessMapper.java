@@ -1,16 +1,24 @@
 package cn.huaxiaerp.huaxia_erp.datasource.mappers;
 
 import cn.huaxiaerp.huaxia_erp.datasource.po.UserBusiness;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * <p>
- * 用户/角色/模块关系表 Mapper 接口
- * </p>
- *
- * @author Tv
- * @since 2023-05-31
- */
-public interface UserBusinessMapper extends BaseMapper<UserBusiness> {
+import java.util.List;
 
+public interface UserBusinessMapper {
+
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(UserBusiness record);
+
+    int insertSelective(UserBusiness record);
+
+
+    UserBusiness selectByPrimaryKey(Long id);
+
+
+    int updateByPrimaryKeySelective(UserBusiness record);
+
+    int updateByPrimaryKey(UserBusiness record);
 }
