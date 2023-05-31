@@ -7,7 +7,9 @@ import java.io.Serializable;
 
 import java.math.BigDecimal;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 /**
@@ -15,6 +17,8 @@ import org.hibernate.validator.constraints.Length;
 * @TableName jsh_unit
 */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Unit implements Serializable {
 
     /**
@@ -90,174 +94,5 @@ public class Unit implements Serializable {
     @ApiModelProperty("删除标记，0未删除，1删除")
     @Length(max= 1,message="编码长度不能超过1")
     private String deleteFlag;
-
-    /**
-    * 主键
-    */
-    private void setId(Long id){
-    this.id = id;
-    }
-
-    /**
-    * 名称，支持多单位
-    */
-    private void setName(String name){
-    this.name = name;
-    }
-
-    /**
-    * 基础单位
-    */
-    private void setBasicUnit(String basicUnit){
-    this.basicUnit = basicUnit;
-    }
-
-    /**
-    * 副单位
-    */
-    private void setOtherUnit(String otherUnit){
-    this.otherUnit = otherUnit;
-    }
-
-    /**
-    * 副单位2
-    */
-    private void setOtherUnitTwo(String otherUnitTwo){
-    this.otherUnitTwo = otherUnitTwo;
-    }
-
-    /**
-    * 副单位3
-    */
-    private void setOtherUnitThree(String otherUnitThree){
-    this.otherUnitThree = otherUnitThree;
-    }
-
-    /**
-    * 比例
-    */
-    private void setRatio(BigDecimal ratio){
-    this.ratio = ratio;
-    }
-
-    /**
-    * 比例2
-    */
-    private void setRatioTwo(BigDecimal ratioTwo){
-    this.ratioTwo = ratioTwo;
-    }
-
-    /**
-    * 比例3
-    */
-    private void setRatioThree(BigDecimal ratioThree){
-    this.ratioThree = ratioThree;
-    }
-
-    /**
-    * 启用
-    */
-    private void setEnabled(Boolean enabled){
-    this.enabled = enabled;
-    }
-
-    /**
-    * 租户id
-    */
-    private void setTenantId(Long tenantId){
-    this.tenantId = tenantId;
-    }
-
-    /**
-    * 删除标记，0未删除，1删除
-    */
-    private void setDeleteFlag(String deleteFlag){
-    this.deleteFlag = deleteFlag;
-    }
-
-
-    /**
-    * 主键
-    */
-    private Long getId(){
-    return this.id;
-    }
-
-    /**
-    * 名称，支持多单位
-    */
-    private String getName(){
-    return this.name;
-    }
-
-    /**
-    * 基础单位
-    */
-    private String getBasicUnit(){
-    return this.basicUnit;
-    }
-
-    /**
-    * 副单位
-    */
-    private String getOtherUnit(){
-    return this.otherUnit;
-    }
-
-    /**
-    * 副单位2
-    */
-    private String getOtherUnitTwo(){
-    return this.otherUnitTwo;
-    }
-
-    /**
-    * 副单位3
-    */
-    private String getOtherUnitThree(){
-    return this.otherUnitThree;
-    }
-
-    /**
-    * 比例
-    */
-    private BigDecimal getRatio(){
-    return this.ratio;
-    }
-
-    /**
-    * 比例2
-    */
-    private BigDecimal getRatioTwo(){
-    return this.ratioTwo;
-    }
-
-    /**
-    * 比例3
-    */
-    private BigDecimal getRatioThree(){
-    return this.ratioThree;
-    }
-
-    /**
-    * 启用
-    */
-    private Boolean getEnabled(){
-    return this.enabled;
-    }
-
-    /**
-    * 租户id
-    */
-    private Long getTenantId(){
-    return this.tenantId;
-    }
-
-    /**
-    * 删除标记，0未删除，1删除
-    */
-    private String getDeleteFlag(){
-    return this.deleteFlag;
-    }
 
 }

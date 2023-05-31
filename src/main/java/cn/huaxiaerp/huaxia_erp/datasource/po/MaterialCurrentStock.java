@@ -7,7 +7,9 @@ import java.io.Serializable;
 
 import java.math.BigDecimal;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 /**
@@ -15,6 +17,8 @@ import org.hibernate.validator.constraints.Length;
 * @TableName jsh_material_current_stock
 */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MaterialCurrentStock implements Serializable {
 
     /**
@@ -51,89 +55,5 @@ public class MaterialCurrentStock implements Serializable {
     @Length(max= 1,message="编码长度不能超过1")
     private String deleteFlag;
 
-    /**
-    * 主键
-    */
-    private void setId(Long id){
-    this.id = id;
-    }
-
-    /**
-    * 产品id
-    */
-    private void setMaterialId(Long materialId){
-    this.materialId = materialId;
-    }
-
-    /**
-    * 仓库id
-    */
-    private void setDepotId(Long depotId){
-    this.depotId = depotId;
-    }
-
-    /**
-    * 当前库存数量
-    */
-    private void setCurrentNumber(BigDecimal currentNumber){
-    this.currentNumber = currentNumber;
-    }
-
-    /**
-    * 租户id
-    */
-    private void setTenantId(Long tenantId){
-    this.tenantId = tenantId;
-    }
-
-    /**
-    * 删除标记，0未删除，1删除
-    */
-    private void setDeleteFlag(String deleteFlag){
-    this.deleteFlag = deleteFlag;
-    }
-
-
-    /**
-    * 主键
-    */
-    private Long getId(){
-    return this.id;
-    }
-
-    /**
-    * 产品id
-    */
-    private Long getMaterialId(){
-    return this.materialId;
-    }
-
-    /**
-    * 仓库id
-    */
-    private Long getDepotId(){
-    return this.depotId;
-    }
-
-    /**
-    * 当前库存数量
-    */
-    private BigDecimal getCurrentNumber(){
-    return this.currentNumber;
-    }
-
-    /**
-    * 租户id
-    */
-    private Long getTenantId(){
-    return this.tenantId;
-    }
-
-    /**
-    * 删除标记，0未删除，1删除
-    */
-    private String getDeleteFlag(){
-    return this.deleteFlag;
-    }
 
 }
