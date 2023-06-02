@@ -75,8 +75,22 @@
     id, name, type, price_limit, value, description, enabled, sort, tenant_id, delete_flag
   </sql>
 
+  <select id="selectByExample" parameterType="cn.huaxiaerp.huaxia_erp.datasource.po.RoleExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jsh_role
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from jsh_role
     where id = #{id,jdbcType=BIGINT}
@@ -85,7 +99,95 @@
     delete from jsh_role
     where id = #{id,jdbcType=BIGINT}
   </delete>
-
+  <delete id="deleteByExample" parameterType="cn.huaxiaerp.huaxia_erp.datasource.po.RoleExample">
+    delete from jsh_role
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.huaxiaerp.huaxia_erp.datasource.po.Role">
+    insert into jsh_role (id, name, type,
+                          price_limit, value, description,
+                          enabled, sort, tenant_id,
+                          delete_flag)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR},
+            #{priceLimit,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
+            #{enabled,jdbcType=BIT}, #{sort,jdbcType=VARCHAR}, #{tenantId,jdbcType=BIGINT},
+            #{deleteFlag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.huaxiaerp.huaxia_erp.datasource.po.Role">
+    insert into jsh_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="priceLimit != null">
+        price_limit,
+      </if>
+      <if test="value != null">
+        value,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="enabled != null">
+        enabled,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="tenantId != null">
+        tenant_id,
+      </if>
+      <if test="deleteFlag != null">
+        delete_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="priceLimit != null">
+        #{priceLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null">
+        #{enabled,jdbcType=BIT},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantId != null">
+        #{tenantId,jdbcType=BIGINT},
+      </if>
+      <if test="deleteFlag != null">
+        #{deleteFlag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.huaxiaerp.huaxia_erp.datasource.po.RoleExample" resultType="java.lang.Long">
+    select count(*) from jsh_role
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
   <update id="updateByExampleSelective" parameterType="map">
     update jsh_role
     <set>
@@ -127,17 +229,63 @@
   <update id="updateByExample" parameterType="map">
     update jsh_role
     set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      type = #{record.type,jdbcType=VARCHAR},
-      price_limit = #{record.priceLimit,jdbcType=VARCHAR},
-      value = #{record.value,jdbcType=VARCHAR},
-      description = #{record.description,jdbcType=VARCHAR},
-      enabled = #{record.enabled,jdbcType=BIT},
-      sort = #{record.sort,jdbcType=VARCHAR},
-      tenant_id = #{record.tenantId,jdbcType=BIGINT},
-      delete_flag = #{record.deleteFlag,jdbcType=VARCHAR}
+    name = #{record.name,jdbcType=VARCHAR},
+    type = #{record.type,jdbcType=VARCHAR},
+    price_limit = #{record.priceLimit,jdbcType=VARCHAR},
+    value = #{record.value,jdbcType=VARCHAR},
+    description = #{record.description,jdbcType=VARCHAR},
+    enabled = #{record.enabled,jdbcType=BIT},
+    sort = #{record.sort,jdbcType=VARCHAR},
+    tenant_id = #{record.tenantId,jdbcType=BIGINT},
+    delete_flag = #{record.deleteFlag,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.huaxiaerp.huaxia_erp.datasource.po.Role">
+    update jsh_role
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="priceLimit != null">
+        price_limit = #{priceLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        value = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null">
+        enabled = #{enabled,jdbcType=BIT},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=VARCHAR},
+      </if>
+      <if test="tenantId != null">
+        tenant_id = #{tenantId,jdbcType=BIGINT},
+      </if>
+      <if test="deleteFlag != null">
+        delete_flag = #{deleteFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.huaxiaerp.huaxia_erp.datasource.po.Role">
+    update jsh_role
+    set name = #{name,jdbcType=VARCHAR},
+        type = #{type,jdbcType=VARCHAR},
+        price_limit = #{priceLimit,jdbcType=VARCHAR},
+        value = #{value,jdbcType=VARCHAR},
+        description = #{description,jdbcType=VARCHAR},
+        enabled = #{enabled,jdbcType=BIT},
+        sort = #{sort,jdbcType=VARCHAR},
+        tenant_id = #{tenantId,jdbcType=BIGINT},
+        delete_flag = #{deleteFlag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
