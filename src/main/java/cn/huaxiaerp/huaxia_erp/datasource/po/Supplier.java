@@ -7,6 +7,8 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 import java.math.BigDecimal;
+
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +22,7 @@ import org.hibernate.validator.constraints.Length;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@TableName("jsh_supplier")
 public class Supplier implements Serializable {
 
     /**
@@ -172,6 +175,5 @@ public class Supplier implements Serializable {
     @ApiModelProperty("删除标记，0未删除，1删除")
     @Length(max= 1,message="编码长度不能超过1")
     private String deleteFlag;
-
 
 }
